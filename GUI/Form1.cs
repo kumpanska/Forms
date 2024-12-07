@@ -77,4 +77,15 @@ namespace GUI
             g.DrawRectangle(new Pen(Color.White), x - sideLength / 2, y - sideLength / 2, sideLength, sideLength);
         }
     }
+    public class Rhomb : Figure
+    {
+        private int horDiagLen;
+        private int vertDiagLen;
+
+        public Rhomb(int x, int y, int horDiagLen, int vertDiagLen) : base(x, y)
+        {
+            this.horDiagLen = horDiagLen;
+            this.vertDiagLen = vertDiagLen;
+        }
+    }
 }
