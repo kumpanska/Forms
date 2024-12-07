@@ -68,6 +68,13 @@ namespace GUI
         {
             this.sideLength = sideLength;
         }
-
+        public override void DrawBlack(Graphics g)
+        {
+            g.DrawRectangle(Pens.Black, x - sideLength / 2, y - sideLength / 2, sideLength, sideLength);
+        }
+        public override void HideDrawingBackGround(Graphics g)
+        {
+            g.DrawRectangle(new Pen(Color.White), x - sideLength / 2, y - sideLength / 2, sideLength, sideLength);
+        }
     }
 }
