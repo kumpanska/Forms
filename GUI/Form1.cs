@@ -29,5 +29,18 @@ namespace GUI
         }
         public abstract void DrawBlack(Graphics g);
         public abstract void HideDrawingBackGround(Graphics g);
+        public void MoveRight(Form form, int step)
+        {
+            using (Graphics g = form.CreateGraphics())
+            {
+                for (int i = 0; i < step; i++)
+                {
+                    DrawBlack(g);
+                    System.Threading.Thread.Sleep(100);
+                    HideDrawingBackGround(g);
+                    x++;
+                }
+            }
+        }
     }
 }
