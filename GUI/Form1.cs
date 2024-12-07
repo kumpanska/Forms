@@ -23,6 +23,21 @@ namespace GUI
             circle = new Circle(300, 100, 50);
             square = new Square(200, 200, 100);
             rhomb = new Rhomb(100, 300, 50, 50);
+            moveButton = new Button
+            {
+                Text = "Move Right",
+                Location = new Point(10, 10),
+                Size = new Size(100, 30)
+            };
+            moveButton.Click += MoveButton_Click;
+            Controls.Add(moveButton);
+
+        }
+        private void MoveButton_Click(object sender, EventArgs e)
+        {
+            Task.Run(() => circle.MoveRight(this, 50));
+            Task.Run(() => square.MoveRight(this, 50));
+            Task.Run(() => rhomb.MoveRight(this, 50));
         }
     }
     public abstract class Figure
