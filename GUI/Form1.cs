@@ -43,4 +43,13 @@ namespace GUI
             }
         }
     }
+    public class Circle : Figure
+    {
+        private int radius;
+
+        public Circle(int x, int y, int radius) : base(x, y)
+        {
+            this.radius = radius;
+        }
+    }
 }
