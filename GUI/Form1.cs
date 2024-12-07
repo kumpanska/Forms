@@ -12,9 +12,17 @@ namespace GUI
 {
     public partial class Form1 : Form
     {
+        private Circle circle;
+        private Square square;
+        private Rhomb rhomb;
+        private Button moveButton;
+
         public Form1()
         {
             InitializeComponent();
+            circle = new Circle(300, 100, 50);
+            square = new Square(200, 200, 100);
+            rhomb = new Rhomb(100, 300, 50, 50);
         }
     }
     public abstract class Figure
