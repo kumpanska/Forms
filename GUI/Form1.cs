@@ -20,9 +20,9 @@ namespace GUI
         public Form1()
         {
             InitializeComponent();
-            circle = new Circle(300, 100, 50);
-            square = new Square(200, 200, 100);
-            rhomb = new Rhomb(100, 300, 50, 50);
+            circle = new Circle(100, 50, 50);
+            square = new Square(100, 170, 100);
+            rhomb = new Rhomb(100, 300, 100, 100);
             moveButton = new Button
             {
                 Text = "Move Right",
