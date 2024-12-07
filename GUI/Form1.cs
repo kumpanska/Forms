@@ -35,9 +35,9 @@ namespace GUI
         }
         private void MoveButton_Click(object sender, EventArgs e)
         {
-            Task.Run(() => circle.MoveRight(this, 50));
-            Task.Run(() => square.MoveRight(this, 50));
-            Task.Run(() => rhomb.MoveRight(this, 50));
+            Task.Run(() => circle.MoveRight(this, 50,100,50));
+            Task.Run(() => square.MoveRight(this, 50,100,170));
+            Task.Run(() => rhomb.MoveRight(this, 50,100,300));
         }
     }
     public abstract class Figure
@@ -52,7 +52,7 @@ namespace GUI
         }
         public abstract void DrawBlack(Graphics g);
         public abstract void HideDrawingBackGround(Graphics g);
-        public void MoveRight(Form form, int step)
+        public void MoveRight(Form form, int step,int initialX,int initialY)
         {
             using (Graphics g = form.CreateGraphics())
             {
@@ -62,6 +62,13 @@ namespace GUI
                     System.Threading.Thread.Sleep(100);
                     HideDrawingBackGround(g);
                     x++;
+                    if (x > form.Width)
+                    {
+                        x = initialX;
+                        y = initialY;
+                        form.Invalidate();
+                        break;
+                    }
                 }
             }
         }
