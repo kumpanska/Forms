@@ -27,5 +27,7 @@ namespace GUI
             this.x = x;
             this.y = y;
         }
+        public abstract void DrawBlack(Graphics g);
+        public abstract void HideDrawingBackGround(Graphics g);
     }
 }
