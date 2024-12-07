@@ -117,25 +117,24 @@ namespace GUI
             this.horDiagLen = horDiagLen;
             this.vertDiagLen = vertDiagLen;
         }
+        private Point[] GetPoints()
+        {
+            return new Point[]
+            {
+            new Point(x, y - vertDiagLen / 2),
+            new Point(x + horDiagLen / 2, y),
+            new Point(x, y + vertDiagLen / 2),
+            new Point(x - horDiagLen / 2, y)
+            };
+        }
         public override void DrawBlack(Graphics g)
         {
-            Point[] points = new Point[]
-            {
-                new Point(x, y - vertDiagLen / 2),
-                new Point(x + horDiagLen / 2, y),
-                new Point(x, y + vertDiagLen / 2),
-                new Point(x - horDiagLen / 2, y)
-            };
+            Point[] points = GetPoints();
             g.DrawPolygon(Pens.Black, points);
         }
         public override void HideDrawingBackGround(Graphics g)
         {
-            Point[] points = {
-                new Point(x, y - vertDiagLen / 2),
-                new Point(x + horDiagLen / 2, y),
-                new Point(x, y + vertDiagLen / 2),
-                new Point(x - horDiagLen / 2, y)
-            };
+            Point[] points = GetPoints();
             g.DrawPolygon(new Pen(Color.White), points);
         }
     }
