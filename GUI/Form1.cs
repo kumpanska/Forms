@@ -60,4 +60,14 @@ namespace GUI
             g.DrawEllipse(new Pen(Color.White), x - radius, y - radius, 2 * radius, 2 * radius);
         }
     }
+    public class Square : Figure
+    {
+        private int sideLength;
+
+        public Square(int x, int y, int sideLength) : base(x, y)
+        {
+            this.sideLength = sideLength;
+        }
+
+    }
 }
