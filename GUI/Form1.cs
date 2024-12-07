@@ -51,5 +51,13 @@ namespace GUI
         {
             this.radius = radius;
         }
+        public override void DrawBlack(Graphics g)
+        {
+            g.DrawEllipse(Pens.Black, x - radius, y - radius, 2 * radius, 2 * radius);
+        }
+        public override void HideDrawingBackGround(Graphics g)
+        {
+            g.DrawEllipse(new Pen(Color.White), x - radius, y - radius, 2 * radius, 2 * radius);
+        }
     }
 }
